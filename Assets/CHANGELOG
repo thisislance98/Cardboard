@@ -1,0 +1,55 @@
+v0.2 (12/03/2014):
+-  Added optional settings button that links to a Cardboard app for managing headset parameters.
+-  Added optional alignment marker to help center the screen under the lenses.
+-  Rearranged the contents of the Cardboard folder.
+-  Added support for Image Effects and Deferred Rendering in stereo.
+-  Added support for drawing OnGUI()-based UI in stereo.
+-  Allow user head tracking + magnetic trigger to activate OnGUI UI elements.
+-  Added support for directional lens flares in stereo.
+-  Added CardboardHead.Gaze property to help with gaze tracking.
+-  Fixed bug in IPD scaling code: did not include eye offset in stereo comfort calculation.
+
+v0.3 (12/04/2014):
+-  Removed AutoEnableVR because it relies on NFC and was not triggering
+   reliably for all Cardboard/phone combinations.
+
+v0.4 (12/10/2014):
+-  Fixed bug in the alignment marker rendering.
+-  Fixed bug converting mouse click to magnet trigger when playing in the editor.
+
+v0.4.1 (12/18/2014):
+-  The CardboardGUI script automatically disables itself in Unity Free.
+
+v0.4.5 (2/26/2015):
+-  Added Cardboard.SDK.nativeDistortionCorrection to toggle built-in distortion correction on/off.
+-  Added Cardboard.SDK.Recenter() to reset the head tracker to the current direction.
+-  Added Cardboard.SDK.CreateScreen(x,y) to init the stereo rendertexture at given resolution.
+-  Added Cardboard.SDK.BackButtonExitsApp to control how the back button is handled.
+-  Added CardboardEye.toggleCullingMask to turn on or off specific layers in each eye.
+-  Added StereoController.matchByZoom to match the mono FOV by zooming rather than translating.
+-  Added SkyboxMesh.layer to set the layer of the generated skybox mesh.
+-  The x86 architecture is now supported.
+-  The message ‘Unable to find Unity Activity’ has been fixed.
+-  The aspect ratio is determined by the device configuration, regardless of screen size.
+-  The UI layer (alignment marker and settings button) work in Unity Free.
+
+v0.4.9 (3/27/2015):
+-  Added Cardboard.SDK.AutoDriftCorrection to turn gyro drift correction on/off (default on).
+-  Added GazeInputModule for using gaze and magnet to interact with uGUI elements.
+-  Added Cardboard.SDK.NeckModelScale to control the scale of the built-in neck model.
+-  Added CardboardHead.trackRotation/trackPosition to control specific types of head tracking.
+-  The entire screen is correctly cleared in VR mode.
+-  Unity 5 import errors and warnings have been fixed; it will still ask to upgrade (say Yes).
+-  The alignment marker is also drawn in the editor.
+-  Distortion correction is applied in the editor.
+-  Deprecated CardboardGUI scripts: not needed in Unity 5, moved to Legacy folder.
+-  Deprecated SkyboxMesh and StereoLensFlare scripts: ditto.
+-  Demo scene now uses uGUI instead of OnGUI.
+-  Original demo scene using CardboardGUI moved to Legacy folder.
+
+v0.4.10 (4/16/2015):
+-  StereoController now caches the Eyes array.  Call InvalidateEyes() to reset the cache.
+-  Moved coroutine management in Cardboard and StereoController to OnEnable()/OnDisable().
+-  Fixed CardboardGUI's Head property in the Legacy demo scene.
+-  Fixed the neck model Z offset in the Editor.
+-  Fixed a bug in CardboardEditor which failed to save the Editor-only settings.
